@@ -1,0 +1,85 @@
+body {
+    background-image: url('/assets/splash-bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: translateY(-2px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.splash-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5vh 5px 14vh;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.splash-content {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    max-width: 90vw;
+    align-items: center;
+    margin: 0 auto;
+
+    .logo-symbol {
+        width: 40%;
+    }
+
+    .tagline {
+        margin: 10px 0;
+    }
+
+    em.marquee {
+        margin: 25px 10px 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-shadow: 0px 7px 1px rgba(135, 39, 39, 0.3);
+        font-size: 20px;
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    .footer-text {
+        color: #e75454;
+        text-align: center;
+
+        a {
+            color: #f06c6c;
+        }
+    }
+
+    img.logotype {
+        width: 100%;
+        flex-basis: 100%;
+        align-self: stretch;
+    }
+
+    big {
+        font-size: 1.5em;
+    }
+
+    hr {
+        margin: 15px 0;
+        border-color: rgba(215, 215, 215, 0.3);
+    }
+}

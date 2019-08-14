@@ -1,0 +1,57 @@
+$white: #ffffff; // _white
+$bright-red: #ff383e; // alizarin
+$red: #c42333; // cardinal
+$blue: #048ea5; // eastern_blue
+$gold: #faab2e; // lightning_yellow
+$teal: #16706d; // blue_stone
+$green: #2fba49; // lime-green
+$med-dark-grey: #5a5b5b; // zambezi
+$dark-grey: #343535; // night_rider
+$black: #181919; // nero
+$dark-black: #0c0c0c; // _black
+
+$named-colors: (
+  "white": $white,
+  "bright-red": $bright-red,
+  "red": $red,
+  "blue": $blue,
+  "gold": $gold,
+  "teal": $teal,
+  "green": $green,
+  "med-dark-grey": $med-dark-grey,
+  "dark-grey": $dark-grey,
+  "black": $black,
+  "dark-black": $black
+);
+
+$subtle: $med-dark-grey;
+$success: $green;
+$calm: $blue;
+$warning: $gold;
+$danger: $red;
+$primary: $bright-red;
+$secondary: $teal;
+
+$contextual-colors: (
+  "subtle": $subtle,
+  "success": $success,
+  "calm": $calm,
+  "warning": $warning,
+  "danger": $danger,
+  "primary": $primary,
+  "secondary": $secondary,
+);
+
+@mixin colorClass ($colorName, $color) {
+  .text-#{$colorName} { color: $color; };
+  .background-#{$colorName} { background-color: $color; }
+}
+
+@mixin colorClasses ($list) {
+  @each $colorName, $color in $list {
+    @include colorClass($colorName, $color);
+  }
+}
+
+@include colorClasses($named-colors);
+@include colorClasses($contextual-colors);
