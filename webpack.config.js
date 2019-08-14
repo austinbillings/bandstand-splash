@@ -28,6 +28,7 @@ if (prodMode) {
 module.exports = {
 	entry: path.join(__dirname, '/src/index.jsx'),
 	devtool: 'source-map',
+    mode: 'production',
 	output: {
 		path: path.join(__dirname, 'dist'),
 		filename: `${bundleName}.js`,
